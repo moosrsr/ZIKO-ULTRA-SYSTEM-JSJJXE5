@@ -1,0 +1,111 @@
+/* global.css */
+
+/* إعدادات الجذع الأساسية */
+:root {
+    --primary-color: #3498db; /* اللون الأساسي */
+    --secondary-color: #2ecc71; /* اللون الثانوي */
+    --font-family: 'Arial', sans-serif; /* نوع الخط */
+    --font-size-base: 16px; /* حجم الخط الأساسي */
+    --border-radius: 5px; /* نصف قطر الحدود */
+    --transition-speed: 0.3s; /* سرعة الانتقال */
+}
+
+/* إعدادات الجسم */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: var(--font-family);
+    font-size: var(--font-size-base);
+    background-color: #f4f4f4; /* لون خلفية الجسم */
+    color: #333; /* لون النص */
+    line-height: 1.6; /* ارتفاع السطر */
+}
+
+/* إعدادات الروابط */
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color var(--transition-speed);
+}
+
+a:hover {
+    color: var(--secondary-color);
+}
+
+/* إعدادات الأزرار */
+button {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: var(--border-radius);
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color var(--transition-speed);
+}
+
+button:hover {
+    background-color: var(--secondary-color);
+}
+
+/* إعدادات الحاويات */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* إعدادات الشبكة */
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin: -10px; /* لتقليل المسافات بين العناصر */
+}
+
+.col {
+    flex: 1;
+    padding: 10px; /* حواف داخلية */
+}
+
+/* إعدادات العناصر المتجاوبة */
+@media (max-width: 768px) {
+    .col {
+        flex: 100%; /* العمود يأخذ كامل العرض على الشاشات الصغيرة */
+    }
+}
+
+/* إعدادات الحركات */
+.fade-in {
+    animation: fadeIn var(--transition-speed) forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* إعدادات النوافذ المنبثقة */
+.modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    border-radius: var(--border-radius);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000; /* أعلى من باقي العناصر */
+    padding: 20px;
+    width: 80%;
+    max-width: 500px;
+}
+
+/* إعدادات التذييل */
+.footer {
+    text-align: center;
+    padding: 20px 0;
+    background-color: #2c3e50;
+    color: white;
+}
